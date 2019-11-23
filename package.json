@@ -1,7 +1,7 @@
 {
   "name": "ring-buffer-ts",
   "version": "1.0.0",
-  "description": "A ring buffer written in TypeScript.",
+  "description": "A circular array buffer written in modern TypeScript.",
   "scripts": {
     "build": "webpack",
     "lint": "tslint -p tsconfig.json",

@@ -2387,18 +2387,31 @@ img {
 				<li>Documentation (included declaration types and doc-comments).</li>
 				<li>Clean and modern code.</li>
 				<li>Written in TypeScript (strict mode and strongly typed).</li>
-				<li>Great performance. (circular processing)</li>
 				<li>Easy API.</li>
+				<li>High performance when adding items.</li>
 				<li>No dependencies.</li>
 				<li>NodeJS, Browser.</li>
 				<li>Tiny size.</li>
 			</ul>
-			<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
-				<h2>Todo</h2>
+			<p>Missing feature? Note that you can export and import the buffer as array and you can do what ever you want with the array. You can also consider to create an issue here and pull-request to add features.</p>
+			<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+				<h2>Install</h2>
 			</a>
-			<ul>
-				<li>Remove item (splice, shift, pop)</li>
-			</ul>
+			<pre><code class="language-text">npm i ring-buffer-ts</code></pre>
+			<p><a href="https://www.npmjs.com/package/ring-buffer-ts">NPM Package</a></p>
+			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+				<h2>Usage</h2>
+			</a>
+			<pre><code class="language-ts"><span class="hljs-keyword">import</span> { RingBuffer } <span class="hljs-keyword">from</span> <span class="hljs-string">'ring-buffer-ts'</span>;
+
+<span class="hljs-keyword">const</span> ringBuffer = <span class="hljs-keyword">new</span> RingBuffer&lt;<span class="hljs-built_in">number</span>&gt;(<span class="hljs-number">5</span>);
+ringBuffer.add(<span class="hljs-number">1</span>);
+ringBuffer.add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+ringBuffer.add(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>);
+
+<span class="hljs-built_in">console</span>.log(ringBuffer.toArray());
+<span class="hljs-comment">// Result: [2, 3, 4, 5, 6]</span></code></pre>
+			<p><a href="https://domske.github.io/ring-buffer/">Documentation</a></p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
