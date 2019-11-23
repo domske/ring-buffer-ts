@@ -1,0 +1,27 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-consistent-codestyle"],
+  "rules": {
+    "max-classes-per-file": false,
+    "quotemark": [true, "single"],
+    "no-console": false,
+    "semicolon": [true, "always"],
+    "no-consecutive-blank-lines": true,
+    "ban-comma-operator": true,
+    "curly": true,
+    "function-constructor": true,
+    "no-duplicate-super": true,
+    "no-restricted-globals": [true, "event", "length", "name", "setInterval", "setTimeout"],
+    "prefer-template": [true, "allow-single-concat"],
+    "no-namespace": true,
+    "member-access": true,
+    "interface-name": false,
+    "typedef": [true, "call-signature", "property-declaration"],
+    "file-name-casing": [true, "kebab-case", "strictCamelCase"],
+    "naming-convention": [
+      true,
+      { "type": "default", "format": "strictCamelCase" },
+      { "type": "type", "format": "StrictPascalCase" },
+      { "type": "enumMember", "format": "StrictPascalCase" }
+    ]
+  }
+}

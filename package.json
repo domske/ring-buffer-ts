@@ -1,0 +1,52 @@
+{
+  "name": "ring-buffer-ts",
+  "version": "1.0.0",
+  "description": "A ring buffer written in TypeScript.",
+  "scripts": {
+    "build": "webpack",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "docs": "typedoc src",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "ring buffer",
+    "ringbuffer",
+    "ring",
+    "buffer",
+    "circular buffer",
+    "circular"
+  ],
+  "author": "Dominik-Andreas Geng",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/domske/ring-buffer-ts.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "clean-webpack-plugin": "^3.0.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.1.0",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-consistent-codestyle": "^1.16.0",
+    "typedoc": "^0.15.2",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
