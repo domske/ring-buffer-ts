@@ -38,4 +38,4 @@ console.log(ringBuffer.toArray());
 // Result: [2, 3, 4, 5, 6]
 ```
 
-[Documentation](https://domske.github.io/ring-buffer/)
+[Documentation](https://domske.github.io/ring-buffer-ts/)
