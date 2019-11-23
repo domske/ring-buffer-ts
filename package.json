@@ -1,6 +1,6 @@
 {
   "name": "ring-buffer-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A circular array buffer written in modern TypeScript.",
   "scripts": {
     "build": "webpack",
@@ -16,7 +16,7 @@
     "postversion": "git push && git push --tags"
   },
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
