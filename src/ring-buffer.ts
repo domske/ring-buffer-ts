@@ -16,9 +16,9 @@ export class RingBuffer<T> {
     return ringBuffer;
   }
 
-  private buffer: T[] = [];
-  private size: number;
-  private pos = 0;
+  protected buffer: T[] = [];
+  protected size: number;
+  protected pos = 0;
 
   /**
    * Creates a new ring buffer.
