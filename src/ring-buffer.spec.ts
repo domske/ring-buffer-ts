@@ -225,6 +225,18 @@ test('Get first N items.', () => {
   expect(ringBuffer.firstN(1)).toEqual([8]);
 });
 
+test('Get last N items.', () => {
+  const ringBuffer = new RingBuffer<number>(7);
+  ringBuffer.add(1, 2, 3, 4, 5, 6, 7);
+  expect(ringBuffer.lastN(3)).toEqual([5, 6, 7]);
+  ringBuffer.add(8, 9, 10);
+  expect(ringBuffer.lastN(3)).toEqual([8, 9, 10]);
+  expect(ringBuffer.lastN(6)).toEqual([5, 6, 7, 8, 9, 10]);
+  expect(ringBuffer.lastN(7)).toEqual([4, 5, 6, 7, 8, 9, 10]);
+  ringBuffer.add(11, 12, 13, 14);
+  expect(ringBuffer.lastN(1)).toEqual([14]);
+});
+
 test('Create from array.', () => {
   const ringBuffer = RingBuffer.fromArray([10, 20, 30]);
   expect(ringBuffer).toBeTruthy();

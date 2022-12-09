@@ -155,6 +155,19 @@ export class RingBuffer<T> {
   }
 
   /**
+   * Return the last `n` elements as an array.
+   * @param n Number of elements to return.
+   */
+  public lastN(n: number): T[] {
+    const firstPart = this.buffer.slice(Math.max(0, this.pos - n), this.pos);
+    const remaining = n - this.pos;
+    if (remaining <= 0) {
+      return firstPart;
+    }
+    return this.buffer.slice(this.size - remaining, this.size).concat(firstPart);
+  }
+
+  /**
    * Imports an array to this buffer. (overwrites)
    * @param data JavaScript standard array.
    * @param resize If true, sets the maximum size to the input data array length.
