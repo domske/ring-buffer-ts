@@ -22,9 +22,8 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
+    library: "RingBuffer",
     libraryTarget: 'umd',
-    umdNamedDefine: true,
-    // library: 'domske',
     globalObject: 'this'
   }
 };
