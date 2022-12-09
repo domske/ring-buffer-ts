@@ -142,6 +142,19 @@ export class RingBuffer<T> {
   }
 
   /**
+   * Return the first `n` elements as an array.
+   * @param n Number of elements to return.
+   */
+  public firstN(n: number): T[] {
+    const firstPart = this.buffer.slice(this.pos, this.pos + n);
+    const remaining = (this.pos + n) - this.size;
+    if (remaining <= 0) {
+      return firstPart;
+    }
+    return firstPart.concat(this.buffer.slice(0, remaining));
+  }
+
+  /**
    * Imports an array to this buffer. (overwrites)
    * @param data JavaScript standard array.
    * @param resize If true, sets the maximum size to the input data array length.
