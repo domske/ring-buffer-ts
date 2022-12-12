@@ -8,5 +8,6 @@
   "excludePrivate": true,
   "excludeProtected": true,
   "includeVersion": true,
+  "disableSources": true,
   "githubPages": true
 }
