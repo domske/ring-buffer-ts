@@ -67,7 +67,7 @@ test('From array.', () => {
 test('From array invalid input.', () => {
   const ringBuffer = new RingBuffer<string>(4);
   expect(() => {
-    ringBuffer.fromArray(undefined);
+    ringBuffer.fromArray(undefined as any);
   }).toThrow(TypeError);
 
   expect(() => {
@@ -283,7 +283,7 @@ test('Complete circular test.', () => {
     { id: 4, name: 'Four' },
     { id: 5, name: 'Five' },
     { id: 6, name: 'Six' },
-    { id: 7, name: 'Seven' }
+    { id: 7, name: 'Seven' },
   ]);
 
   const anotherRingBuffer = new RingBuffer(5);

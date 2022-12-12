@@ -12,39 +12,13 @@
 <div class="col-8 col-content">
 <div class="tsd-page-title">
 <h2>Ring Buffer</h2></div>
-<div class="tsd-panel tsd-typography">
-<a href="#ring-buffer" id="ring-buffer" style="color: inherit; text-decoration: none;">
-  <h1>Ring Buffer</h1>
-</a>
-<p><a href="https://www.npmjs.com/package/ring-buffer-ts"><img src="https://img.shields.io/npm/v/ring-buffer-ts.svg?style=flat-square" alt="Version"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/npm/l/ring-buffer-ts.svg?style=flat-square" alt="MIT License"></a></p>
-<p><img src="readme/logo.png" alt=""></p>
-<p>Aka &quot;circular buffer&quot; written in TypeScript</p>
-<ul>
-<li>Well tested.</li>
-<li>Documentation (included declaration types and doc-comments).</li>
-<li>Clean and modern code.</li>
-<li>Written in TypeScript (strict mode and strongly typed).</li>
-<li>Easy API.</li>
-<li>High performance when adding items.</li>
-<li>No dependencies.</li>
-<li>NodeJS, Browser.</li>
-<li>Tiny size.</li>
-</ul>
-<p>Missing feature? Note that you can export and import the buffer as an array and do whatever you want with the array. For example using slice. You can also consider creating an issue here and adding features via pull request.</p>
-
-<a href="#install" id="install" style="color: inherit; text-decoration: none;">
-  <h2>Install</h2>
-</a>
-<pre><code class="language-text">npm i ring-buffer-ts
-</code></pre>
-
-<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-  <h2>Usage</h2>
-</a>
-<pre><code class="language-ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">RingBuffer</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;ring-buffer-ts&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">ringBuffer</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">RingBuffer</span><span class="hl-1">&lt;</span><span class="hl-7">number</span><span class="hl-1">&gt;(</span><span class="hl-8">5</span><span class="hl-1">);</span><br/><span class="hl-2">ringBuffer</span><span class="hl-1">.</span><span class="hl-6">add</span><span class="hl-1">(</span><span class="hl-8">1</span><span class="hl-1">);</span><br/><span class="hl-2">ringBuffer</span><span class="hl-1">.</span><span class="hl-6">add</span><span class="hl-1">(</span><span class="hl-8">2</span><span class="hl-1">, </span><span class="hl-8">3</span><span class="hl-1">);</span><br/><span class="hl-2">ringBuffer</span><span class="hl-1">.</span><span class="hl-6">add</span><span class="hl-1">(</span><span class="hl-8">4</span><span class="hl-1">, </span><span class="hl-8">5</span><span class="hl-1">, </span><span class="hl-8">6</span><span class="hl-1">);</span><br/><br/><span class="hl-2">console</span><span class="hl-1">.</span><span class="hl-6">log</span><span class="hl-1">(</span><span class="hl-2">ringBuffer</span><span class="hl-1">.</span><span class="hl-6">toArray</span><span class="hl-1">());</span><br/><span class="hl-9">// Result: [2, 3, 4, 5, 6]</span>
-</code></pre>
-<p><a href="https://domske.github.io/ring-buffer-ts/">Documentation</a></p>
-</div></div>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<h3 class="tsd-index-heading uppercase">Index</h3>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Classes</h3>
+<div class="tsd-index-list"><a href="classes/RingBuffer.html" class="tsd-index-link tsd-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-128-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-128-text"></path></svg><span>Ring<wbr/>Buffer</span></a>
+</div></section></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -66,5 +40,5 @@
 <ul></ul></li></ul></div></details></nav>
 <nav class="tsd-navigation secondary menu-sticky">
 <ul>
-<li class="tsd-kind-class"><a href="classes/RingBuffer.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-128-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-128-text"></path></svg>Ring<wbr/>Buffer</a></li></ul></nav></div></div>
+<li class="tsd-kind-class"><a href="classes/RingBuffer.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg>Ring<wbr/>Buffer</a></li></ul></nav></div></div>
 <div class="overlay"></div><script src="assets/main.js"></script></body></html>

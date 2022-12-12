@@ -1,9 +1,3 @@
-/**
- * RingBuffer
- *
- * (c) Copyright 2019 Dominik-Andreas Geng (domske@github)
- */
-
 export class RingBuffer<T> {
   /**
    * Create a new ring buffer from an array.
@@ -26,7 +20,7 @@ export class RingBuffer<T> {
    */
   constructor(size: number) {
     if (size < 0) {
-      throw new RangeError('The size does not allow negative values.');
+      throw new RangeError('Invalid size.');
     }
     this.size = size;
   }
@@ -58,7 +52,7 @@ export class RingBuffer<T> {
    * @param items Items to push to this buffer.
    */
   public add(...items: T[]): void {
-    items.forEach(item => {
+    items.forEach((item) => {
       this.buffer[this.pos] = item;
       this.pos = (this.pos + 1) % this.size;
     });

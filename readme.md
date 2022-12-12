@@ -1,5 +1,7 @@
 # Ring Buffer
 
+[![Version][version]][package] [![MIT License][license-badge]][license]
+
 ![](readme/logo.png)
 
 Aka "circular buffer" written in TypeScript
@@ -14,15 +16,13 @@ Aka "circular buffer" written in TypeScript
 - NodeJS, Browser.
 - Tiny size.
 
-Missing feature? Note that you can export and import the buffer as array and you can do what ever you want with the array. You can also consider to create an issue here and pull-request to add features.
+Missing feature? Note that you can export and import the buffer as an array and do whatever you want with the array. For example using slice. You can also consider creating an issue here and adding features via pull request. Note that the compatibility of protected members in the next minor or patch releases cannot be guaranteed and is not documented.
 
 ## Install
 
 ```text
 npm i ring-buffer-ts
 ```
-
-[NPM Package](https://www.npmjs.com/package/ring-buffer-ts)
 
 ## Usage
 
@@ -39,3 +39,8 @@ console.log(ringBuffer.toArray());
 ```
 
 [Documentation](https://domske.github.io/ring-buffer-ts/)
+
+[license-badge]: https://img.shields.io/npm/l/ring-buffer-ts.svg?style=flat-square
+[license]: https://opensource.org/licenses/MIT
+[version]: https://img.shields.io/npm/v/ring-buffer-ts.svg?style=flat-square
+[package]: https://www.npmjs.com/package/ring-buffer-ts
