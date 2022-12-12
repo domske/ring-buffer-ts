@@ -1,9 +1,12 @@
 {
-  "name": "Ring Buffer",
+  "$schema": "https://typedoc.org/schema.json",
   "out": "docs",
   "exclude": ["src/**/*.spec.ts"],
   "excludeExternals": true,
   "categorizeByGroup": false,
   "hideGenerator": true,
-  "excludePrivate": true
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "includeVersion": true,
+  "githubPages": true
 }
