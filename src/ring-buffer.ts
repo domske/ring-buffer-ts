@@ -33,7 +33,7 @@ export class RingBuffer<T> {
   }
 
   /**
-   * Returns the next index position.
+   * Returns the next internal index position.
    */
   public getPos(): number {
     return this.pos;
@@ -92,6 +92,34 @@ export class RingBuffer<T> {
    */
   public getLast(): T | undefined {
     return this.get(-1);
+  }
+
+  /**
+   * Return the first `n` items as an array.
+   * @param n Number of items to return.
+   */
+  public getFirstN(n: number): T[] {
+    if (n === 0) {
+      return [];
+    }
+    if (n < 0) {
+      return this.getLastN(-n);
+    }
+    return this.toArray().slice(0, n);
+  }
+
+  /**
+   * Return the last `n` items as an array.
+   * @param n Number of items to return.
+   */
+  public getLastN(n: number): T[] {
+    if (n === 0) {
+      return [];
+    }
+    if (n < 0) {
+      return this.getFirstN(-n);
+    }
+    return this.toArray().slice(-n);
   }
 
   /**

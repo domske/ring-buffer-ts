@@ -1,6 +1,6 @@
 {
   "name": "ring-buffer-ts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A circular array buffer written in modern TypeScript.",
   "scripts": {
     "build": "webpack",
@@ -30,7 +30,7 @@
     "circular"
   ],
   "author": {
-    "name": "Dominik-Andreas Geng",
+    "name": "Dominik Geng",
     "url": "https://github.com/domske/"
   },
   "license": "MIT",
@@ -42,7 +42,6 @@
     "@types/jest": "^29.2.4",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
-    "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.29.0",
     "jest": "^29.3.1",
     "prettier": "^2.8.1",

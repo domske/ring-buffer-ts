@@ -151,7 +151,7 @@ test('Resize same size.', () => {
   expect(ringBuffer.toArray()).toEqual([2, 3, 4]);
 });
 
-test('Errpr on new with negative size.', () => {
+test('Error on new with negative size.', () => {
   expect(() => {
     return new RingBuffer<any>(-3);
   }).toThrow(RangeError);
@@ -202,15 +202,25 @@ test('Get item.', () => {
 });
 
 test('Get first.', () => {
-  const ringBuffer = new RingBuffer<number>(3);
-  ringBuffer.add(1, 2, 3, 4, 5);
+  const ringBuffer = new RingBuffer<number>(5);
+  expect(ringBuffer.getFirst()).toBe(undefined);
+  ringBuffer.add(1, 2, 3);
+  expect(ringBuffer.getFirst()).toBe(1);
+  ringBuffer.add(4, 5);
+  expect(ringBuffer.getFirst()).toBe(1);
+  ringBuffer.add(6, 7);
   expect(ringBuffer.getFirst()).toBe(3);
 });
 
 test('Get last.', () => {
-  const ringBuffer = new RingBuffer<number>(3);
-  ringBuffer.add(1, 2, 3, 4, 5);
+  const ringBuffer = new RingBuffer<number>(5);
+  expect(ringBuffer.getLast()).toBe(undefined);
+  ringBuffer.add(1, 2, 3);
+  expect(ringBuffer.getLast()).toBe(3);
+  ringBuffer.add(4, 5);
   expect(ringBuffer.getLast()).toBe(5);
+  ringBuffer.add(6, 7);
+  expect(ringBuffer.getLast()).toBe(7);
 });
 
 test('Create from array.', () => {
@@ -327,4 +337,66 @@ test('Remove out of bounds.', () => {
   ringBuffer.add(1, 2, 3);
   expect(ringBuffer.remove(42)).toEqual([]);
   expect(ringBuffer.toArray()).toEqual([1, 2, 3]);
+});
+
+test('Get first N items.', () => {
+  const ringBuffer = new RingBuffer<number>(7);
+  ringBuffer.add(1, 2, 3, 4, 5, 6, 7);
+  expect(ringBuffer.getFirstN(1)).toEqual([1]);
+  expect(ringBuffer.getFirstN(3)).toEqual([1, 2, 3]);
+  ringBuffer.add(8, 9, 10);
+  expect(ringBuffer.getFirstN(3)).toEqual([4, 5, 6]);
+  expect(ringBuffer.getFirstN(6)).toEqual([4, 5, 6, 7, 8, 9]);
+  expect(ringBuffer.getFirstN(7)).toEqual([4, 5, 6, 7, 8, 9, 10]);
+  ringBuffer.add(11, 12, 13, 14);
+  expect(ringBuffer.getFirstN(1)).toEqual([8]);
+  expect(ringBuffer.getFirstN(0)).toEqual([]);
+  expect(ringBuffer.getFirstN(10)).toEqual([8, 9, 10, 11, 12, 13, 14]);
+  expect(ringBuffer.getFirstN(-1)).toEqual([14]);
+  expect(ringBuffer.getFirstN(-3)).toEqual([12, 13, 14]);
+  expect(ringBuffer.getFirstN(-10)).toEqual([8, 9, 10, 11, 12, 13, 14]);
+});
+
+test('Get last N items.', () => {
+  const ringBuffer = new RingBuffer<number>(7);
+  ringBuffer.add(1, 2, 3, 4, 5, 6, 7);
+  expect(ringBuffer.getLastN(1)).toEqual([7]);
+  expect(ringBuffer.getLastN(3)).toEqual([5, 6, 7]);
+  ringBuffer.add(8, 9, 10);
+  expect(ringBuffer.getLastN(3)).toEqual([8, 9, 10]);
+  expect(ringBuffer.getLastN(6)).toEqual([5, 6, 7, 8, 9, 10]);
+  expect(ringBuffer.getLastN(7)).toEqual([4, 5, 6, 7, 8, 9, 10]);
+  ringBuffer.add(11, 12, 13, 14);
+  expect(ringBuffer.getLastN(1)).toEqual([14]);
+  expect(ringBuffer.getLastN(0)).toEqual([]);
+  expect(ringBuffer.getLastN(10)).toEqual([8, 9, 10, 11, 12, 13, 14]);
+  expect(ringBuffer.getLastN(-1)).toEqual([8]);
+  expect(ringBuffer.getLastN(-3)).toEqual([8, 9, 10]);
+  expect(ringBuffer.getLastN(-10)).toEqual([8, 9, 10, 11, 12, 13, 14]);
+});
+
+test('Example 1', () => {
+  const ringBuffer = new RingBuffer<number>(5);
+  ringBuffer.add(1);
+  ringBuffer.add(2, 3);
+  ringBuffer.add(4, 5, 6);
+  expect(ringBuffer.toArray()).toEqual([2, 3, 4, 5, 6]);
+});
+
+test('Example 2', () => {
+  const ringBuffer = new RingBuffer<number>(5);
+  ringBuffer.add(11);
+  ringBuffer.add(22);
+  ringBuffer.add(33);
+  expect(ringBuffer.toArray()).toEqual([11, 22, 33]);
+  ringBuffer.remove(1);
+  expect(ringBuffer.toArray()).toEqual([11, 33]);
+  ringBuffer.add(44, 55);
+  expect(ringBuffer.toArray()).toEqual([11, 33, 44, 55]);
+  ringBuffer.removeFirst();
+  ringBuffer.removeLast();
+  expect(ringBuffer.toArray()).toEqual([33, 44]);
+  ringBuffer.add(66, 77, 88, 99);
+  ringBuffer.remove(2, 2);
+  expect(ringBuffer.toArray()).toEqual([44, 66, 99]);
 });
